@@ -1,4 +1,3 @@
-// pipelined_processor.v
 module pipelined_processor (
   input clk,
   input reset,
@@ -35,6 +34,9 @@ module pipelined_processor (
   // Memory (simplified)
   reg [31:0] memory [1023:0]; // 1KB memory
 
+  // Integer for loop counters
+  integer i;
+
   // Stages
   always @(posedge clk or posedge reset) begin
     if (reset) begin
@@ -42,9 +44,9 @@ module pipelined_processor (
       id_ex_instruction <= 32'b0;
       ex_mem_wb_instruction <= 32'b0;
       result_out <= 32'b0;
-      //Initialize memory and registers
-      for (integer i = 0; i < 32; i = i + 1) registers[i] <= 32'b0;
-      for (integer i = 0; i < 1024; i = i + 1) memory[i] <= 32'b0;
+      // Initialize memory and registers
+      for (i = 0; i < 32; i = i + 1) registers[i] <= 32'b0;
+      for (i = 0; i < 1024; i = i + 1) memory[i] <= 32'b0;
     end else begin
       // MEM/WB Stage
       if (ex_mem_wb_instruction[31:26] == 6'b000000 || ex_mem_wb_instruction[31:26] == 6'b000001 || ex_mem_wb_instruction[31:26] == 6'b000010) begin // ADD, SUB, LOAD
@@ -75,4 +77,3 @@ module pipelined_processor (
   end
 
 endmodule
-
