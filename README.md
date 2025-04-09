@@ -65,4 +65,3 @@ Contributions to this project are highly encouraged. Please feel free to submit 
 
 **output of the task**
 
-<!-- Uploading "IMG-20250408-WA0012.jpg"... -->
