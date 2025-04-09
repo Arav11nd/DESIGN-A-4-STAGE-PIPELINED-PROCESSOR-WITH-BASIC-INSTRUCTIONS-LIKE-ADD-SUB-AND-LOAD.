@@ -65,3 +65,5 @@ Contributions to this project are highly encouraged. Please feel free to submit 
 
 **output of the task**
 
+![Image](https://github.com/user-attachments/assets/a9f61d9a-183c-4edc-b5b8-c84fbc555913)
+![Image](https://github.com/user-attachments/assets/95af73e8-dd0d-4fd5-b0df-01d70647ebfb)
